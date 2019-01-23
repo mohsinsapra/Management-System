@@ -225,7 +225,7 @@ public class Controller implements Initializable {
         pass.setCellValueFactory(new PropertyValueFactory<>("password"));
         image = imageView.getImage();
 
-
+/////////////////////////////////////////
         Retreiving();
     }
 
