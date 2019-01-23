@@ -46,7 +46,7 @@
                                        <content>
                                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                              <children>
-                                                <TableView fx:id="table_product" accessibleText="table" editable="true" layoutX="248.0" layoutY="74.0" onKeyReleased="#Selection_Product" onMouseClicked="#Selection_Product" prefHeight="457.0" prefWidth="660.0" scaleShape="false" style="-fx-border-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="74.0">
+                                                <TableView fx:id="table_product" accessibleText="table" editable="true" layoutX="248.0" layoutY="74.0" prefHeight="457.0" prefWidth="660.0" scaleShape="false" style="-fx-border-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="74.0">
                                                    <columns>
                                                       <TableColumn fx:id="product_id" editable="false" prefWidth="65.92662048339844" style="-fx-alignment: CENTER;" text="ID" />
                                                       <TableColumn fx:id="product_name" editable="false" prefWidth="124.07342529296875" style="-fx-alignment: CENTER;" text="Name" />
@@ -63,22 +63,22 @@
                                                       <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                                    </padding>
                                                 </TableView>
-                                                <Button layoutX="54.0" layoutY="482.0" mnemonicParsing="false" onAction="#Update_Admin" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #fcb737; -fx-text-fill: #fff;" text="Update" AnchorPane.rightAnchor="774.0" AnchorPane.topAnchor="482.0" />
-                                                <TextField fx:id="p_name_update" layoutX="17.0" layoutY="143.0" onKeyTyped="#Changed" prefWidth="182.0" promptText="Name" AnchorPane.leftAnchor="17.0" AnchorPane.topAnchor="143.0" />
-                                                <TextField fx:id="p_price_update" layoutX="17.0" layoutY="206.0" onKeyTyped="#Changed" prefWidth="183.0" promptText="Price" AnchorPane.topAnchor="206.0" />
-                                                <TextField fx:id="p_description_update" layoutX="19.0" layoutY="276.0" onKeyTyped="#Changed" prefWidth="182.0" promptText="Description" AnchorPane.topAnchor="276.0" />
+                                                <Button fx:id="Update_Product_btn" layoutX="54.0" layoutY="482.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #fcb737; -fx-text-fill: #fff;" text="Update" AnchorPane.rightAnchor="774.0" AnchorPane.topAnchor="482.0" />
+                                                <TextField fx:id="p_name_update" layoutX="17.0" layoutY="143.0" prefWidth="182.0" promptText="Name" AnchorPane.leftAnchor="17.0" AnchorPane.topAnchor="143.0" />
+                                                <TextField fx:id="p_price_update" layoutX="17.0" layoutY="206.0" prefWidth="183.0" promptText="Price" AnchorPane.topAnchor="206.0" />
+                                                <TextField fx:id="p_description_update" layoutX="19.0" layoutY="276.0" prefWidth="182.0" promptText="Description" AnchorPane.topAnchor="276.0" />
                                                 <Label layoutX="16.0" layoutY="120.0" text="Name" AnchorPane.topAnchor="120.0" />
                                                 <Label layoutX="17.0" layoutY="183.0" text="Price" AnchorPane.topAnchor="183.0" />
                                                 <Label layoutX="19.0" layoutY="253.0" text="Description" AnchorPane.topAnchor="253.0" />
-                                                <Button layoutX="129.0" layoutY="482.0" mnemonicParsing="false" onAction="#Delete_Admin" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #f41d3a; -fx-text-fill: #fff;" text="Delete" textFill="WHITE" AnchorPane.rightAnchor="699.0" AnchorPane.topAnchor="482.0" />
+                                                <Button fx:id="Delete_Product_btn" layoutX="129.0" layoutY="482.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #f41d3a; -fx-text-fill: #fff;" text="Delete" textFill="WHITE" AnchorPane.rightAnchor="699.0" AnchorPane.topAnchor="482.0" />
                                                 <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="97.0" layoutX="20.0" layoutY="11.0" stroke="BLACK" strokeType="INSIDE" width="159.0" />
-                                                <ImageView fx:id="ViewProduct" fitHeight="88.0" fitWidth="152.0" layoutX="23.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" style="border-radius: 50%;" />
-                                                <ImageView fx:id="imageViewAdmin11" fitHeight="37.0" fitWidth="49.0" layoutX="161.0" layoutY="83.0" onMouseClicked="#fileOpenAdmin" pickOnBounds="true" preserveRatio="true" style="border-radius: 50%;">
+                                                <ImageView fx:id="ViewProduct" fitHeight="88.0" fitWidth="161.0" layoutX="23.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" style="border-radius: 50%;" />
+                                                <ImageView fx:id="imageViewProduct_select" fitHeight="37.0" fitWidth="49.0" layoutX="161.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true" style="border-radius: 50%;">
                                                    <image>
                                                       <Image url="@update.png" />
                                                    </image>
                                                 </ImageView>
-                                                <TextField fx:id="search_name1" layoutX="219.0" layoutY="34.0" onKeyTyped="#Changed" prefWidth="200.0" promptText="Name" />
+                                                <TextField fx:id="search_name1" layoutX="219.0" layoutY="34.0" prefWidth="200.0" promptText="Name" />
                                                 <Label layoutX="221.0" layoutY="7.0" text="Name" />
                                                 <Button layoutX="447.0" layoutY="33.0" mnemonicParsing="false" onAction="#SearchData" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #f41d3a; -fx-text-fill: #fff;" text="Search" textFill="WHITE" />
                                                 <ImageView fx:id="imageViewAdmin111" fitHeight="51.0" fitWidth="30.0" layoutX="531.0" layoutY="34.0" onMouseClicked="#Retreiving" pickOnBounds="true" preserveRatio="true" style="border-radius: 50%;">
@@ -118,13 +118,13 @@
                                                       <Font size="17.0" />
                                                    </font>
                                                 </Label>
-                                                <Button layoutX="545.0" layoutY="410.0" mnemonicParsing="false" onAction="#Add_Product" prefHeight="41.0" prefWidth="111.0" style="-fx-background-color: #29c639; -fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #fff;" text="Add" textFill="#fffefe">
+                                                <Button fx:id="Add_Product_btn" layoutX="545.0" layoutY="410.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="111.0" style="-fx-background-color: #29c639; -fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #fff;" text="Add" textFill="#fffefe">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Button>
                                                 <Circle fx:id="product_image" fill="#1f93ff00" layoutX="146.0" layoutY="115.0" radius="100.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" />
-                                                <ImageView fx:id="prod" fitHeight="56.0" fitWidth="63.0" layoutX="163.0" layoutY="158.0" onMouseClicked="#fileOpenProduct" pickOnBounds="true" preserveRatio="true" style="border-radius: 50%;">
+                                                <ImageView fx:id="product_selector" fitHeight="56.0" fitWidth="63.0" layoutX="163.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true" style="border-radius: 50%;">
                                                    <image>
                                                       <Image url="@profile.png" />
                                                    </image>
@@ -171,7 +171,7 @@
                                     <content>
                                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                              <children>
-                                                <TableView fx:id="table" accessibleText="table" editable="true" layoutX="248.0" layoutY="74.0" onKeyReleased="#Selection_Admin" onMouseClicked="#Selection_Admin" prefHeight="457.0" prefWidth="645.0" scaleShape="false" style="-fx-border-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="74.0">
+                                                <TableView fx:id="table" accessibleText="table" editable="true" layoutX="248.0" layoutY="74.0" prefHeight="457.0" prefWidth="645.0" scaleShape="false" style="-fx-border-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="74.0">
                                                   <columns>
                                                     <TableColumn fx:id="id" editable="false" prefWidth="42.0" style="-fx-alignment: CENTER;" text="ID" />
                                                     <TableColumn fx:id="name" editable="false" prefWidth="182.0" style="-fx-alignment: CENTER;" text="Name" />
@@ -185,22 +185,22 @@
                                                       <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                                    </padding>
                                                 </TableView>
-                                                <Button layoutX="120.0" layoutY="400.0" mnemonicParsing="false" onAction="#Update_Admin" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #fcb737; -fx-text-fill: #fff;" text="Update" AnchorPane.rightAnchor="708.0" AnchorPane.topAnchor="400.0" />
-                                                <TextField fx:id="u_name" layoutX="31.0" layoutY="167.0" onKeyTyped="#Changed" prefWidth="182.0" promptText="Name" AnchorPane.leftAnchor="31.0" AnchorPane.topAnchor="167.0" />
-                                                <TextField fx:id="u_email" layoutX="32.0" layoutY="248.0" onKeyTyped="#Changed" prefWidth="183.0" promptText="Email" AnchorPane.topAnchor="248.0" />
-                                                <TextField fx:id="u_pass" layoutX="34.0" layoutY="328.0" onKeyTyped="#Changed" prefWidth="182.0" promptText="Password" AnchorPane.topAnchor="328.0" />
+                                                <Button fx:id="update_Admin" layoutX="120.0" layoutY="400.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #fcb737; -fx-text-fill: #fff;" text="Update" AnchorPane.rightAnchor="708.0" AnchorPane.topAnchor="400.0" />
+                                                <TextField fx:id="u_name" layoutX="31.0" layoutY="167.0" prefWidth="182.0" promptText="Name" AnchorPane.leftAnchor="31.0" AnchorPane.topAnchor="167.0" />
+                                                <TextField fx:id="u_email" layoutX="32.0" layoutY="248.0" prefWidth="183.0" promptText="Email" AnchorPane.topAnchor="248.0" />
+                                                <TextField fx:id="u_pass" layoutX="34.0" layoutY="328.0" prefWidth="182.0" promptText="Password" AnchorPane.topAnchor="328.0" />
                                                 <Label layoutX="31.0" layoutY="144.0" text="Name" AnchorPane.topAnchor="144.0" />
                                                 <Label layoutX="32.0" layoutY="225.0" text="Email" AnchorPane.topAnchor="225.0" />
                                                 <Label layoutX="34.0" layoutY="305.0" text="Password" AnchorPane.topAnchor="305.0" />
-                                                <Button layoutX="119.0" layoutY="442.0" mnemonicParsing="false" onAction="#Delete_Admin" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #f41d3a; -fx-text-fill: #fff;" text="Delete" textFill="WHITE" AnchorPane.rightAnchor="709.0" AnchorPane.topAnchor="442.0" />
+                                                <Button fx:id="delete_Admin" layoutX="119.0" layoutY="442.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #f41d3a; -fx-text-fill: #fff;" text="Delete" textFill="WHITE" AnchorPane.rightAnchor="709.0" AnchorPane.topAnchor="442.0" />
                                                 <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="127.0" layoutX="19.0" layoutY="5.0" stroke="BLACK" strokeType="INSIDE" width="159.0" />
                                                 <ImageView fx:id="ViewAdmin" fitHeight="118.0" fitWidth="149.0" layoutX="25.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" style="border-radius: 50%;" />
-                                                <ImageView fx:id="imageViewAdmin1" fitHeight="37.0" fitWidth="49.0" layoutX="161.0" layoutY="114.0" onMouseClicked="#fileOpenAdmin" pickOnBounds="true" preserveRatio="true" style="border-radius: 50%;">
+                                                <ImageView fx:id="imageViewAdmin_update" fitHeight="37.0" fitWidth="49.0" layoutX="161.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true" style="border-radius: 50%;">
                                                    <image>
                                                       <Image url="@update.png" />
                                                    </image>
                                                 </ImageView>
-                                                <TextField fx:id="search_name" layoutX="233.0" layoutY="34.0" onKeyTyped="#Changed" prefWidth="200.0" promptText="Name" />
+                                                <TextField fx:id="search_name" layoutX="233.0" layoutY="34.0" prefWidth="200.0" promptText="Name" />
                                                 <Label layoutX="235.0" layoutY="7.0" text="Name" />
                                                 <Button layoutX="447.0" layoutY="33.0" mnemonicParsing="false" onAction="#SearchData" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #f41d3a; -fx-text-fill: #fff;" text="Search" textFill="WHITE" />
                                                 <ImageView fx:id="imageViewAdmin1111" fitHeight="51.0" fitWidth="30.0" layoutX="528.0" layoutY="34.0" onMouseClicked="#Retreiving" pickOnBounds="true" preserveRatio="true" style="border-radius: 50%;">
@@ -246,13 +246,13 @@
                                                       <Font size="17.0" />
                                                    </font>
                                                 </Label>
-                                                <Button layoutX="473.0" layoutY="263.0" mnemonicParsing="false" onAction="#Add_Admin" prefHeight="44.0" prefWidth="103.0" style="-fx-background-color: #29c639; -fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #fff;" text="Add" textFill="#fffefe">
+                                                <Button fx:id="addnew_admin" layoutX="473.0" layoutY="263.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="103.0" style="-fx-background-color: #29c639; -fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #fff;" text="Add" textFill="#fffefe">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Button>
                                                 <Circle fx:id="circle" fill="#1f93ff00" layoutX="132.0" layoutY="154.0" radius="100.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" />
-                                                <ImageView fx:id="imageView" fitHeight="56.0" fitWidth="63.0" layoutX="149.0" layoutY="197.0" onMouseClicked="#fileOpen" pickOnBounds="true" preserveRatio="true" style="border-radius: 50%;">
+                                                <ImageView fx:id="imageViewadd" fitHeight="56.0" fitWidth="63.0" layoutX="149.0" layoutY="197.0" pickOnBounds="true" preserveRatio="true" style="border-radius: 50%;">
                                                    <image>
                                                       <Image url="@profile.png" />
                                                    </image>
@@ -277,7 +277,7 @@
                                        <content>
                                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="549.0" prefWidth="800.0">
                                              <children>
-                                                <TableView fx:id="table_employee" accessibleText="table" editable="true" layoutX="437.0" layoutY="-2.0" onKeyReleased="#Selection_Admin" onMouseClicked="#Selection_Admin" prefHeight="523.0" prefWidth="344.0" scaleShape="false" style="-fx-border-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="0.0">
+                                                <TableView fx:id="table_employee" accessibleText="table" editable="true" layoutX="437.0" layoutY="-2.0" prefHeight="523.0" prefWidth="344.0" scaleShape="false" style="-fx-border-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="0.0">
                                                    <columns>
                                                       <TableColumn fx:id="table_employee_id" editable="false" prefWidth="42.0" style="-fx-alignment: CENTER;" text="ID" />
                                                       <TableColumn fx:id="table_employee_name" editable="false" prefWidth="182.0" style="-fx-alignment: CENTER;" text="Name" />
@@ -289,13 +289,13 @@
                                                       <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                                    </padding>
                                                 </TableView>
-                                                <Button layoutX="152.0" layoutY="293.0" mnemonicParsing="false" onAction="#Update_Admin" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #fcb737; -fx-text-fill: #fff;" text="Update" AnchorPane.rightAnchor="541.0" AnchorPane.topAnchor="293.0" />
-                                                <TextField fx:id="u_name1" layoutX="74.0" layoutY="114.0" onKeyTyped="#Changed" promptText="Name" AnchorPane.leftAnchor="74.0" AnchorPane.topAnchor="114.0">
+                                                <Button layoutX="152.0" layoutY="293.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #fcb737; -fx-text-fill: #fff;" text="Update" AnchorPane.rightAnchor="541.0" AnchorPane.topAnchor="293.0" />
+                                                <TextField fx:id="u_name1" layoutX="74.0" layoutY="114.0" promptText="Name" AnchorPane.leftAnchor="74.0" AnchorPane.topAnchor="114.0">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </TextField>
-                                                <TextField fx:id="u_email1" layoutX="74.0" layoutY="208.0" onKeyTyped="#Changed" promptText="Email" AnchorPane.leftAnchor="74.0" AnchorPane.topAnchor="208.0">
+                                                <TextField fx:id="u_email1" layoutX="74.0" layoutY="208.0" promptText="Email" AnchorPane.leftAnchor="74.0" AnchorPane.topAnchor="208.0">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
@@ -310,7 +310,7 @@
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Label>
-                                                <Button layoutX="230.0" layoutY="293.0" mnemonicParsing="false" onAction="#Delete_Admin" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #f41d3a; -fx-text-fill: #fff;" text="Delete" textFill="WHITE" AnchorPane.rightAnchor="463.0" AnchorPane.topAnchor="293.0" />
+                                                <Button layoutX="230.0" layoutY="293.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #f41d3a; -fx-text-fill: #fff;" text="Delete" textFill="WHITE" AnchorPane.rightAnchor="463.0" AnchorPane.topAnchor="293.0" />
                                              </children>
                                           </AnchorPane>
                                        </content>
@@ -349,13 +349,13 @@
                                                       <Font size="17.0" />
                                                    </font>
                                                 </Label>
-                                                <Button layoutX="473.0" layoutY="263.0" mnemonicParsing="false" onAction="#Add_Admin" prefHeight="44.0" prefWidth="103.0" style="-fx-background-color: #29c639; -fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #fff;" text="Add" textFill="#fffefe">
+                                                <Button layoutX="473.0" layoutY="263.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="103.0" style="-fx-background-color: #29c639; -fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #fff;" text="Add" textFill="#fffefe">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Button>
                                                 <Circle fx:id="circle1" fill="#1f93ff00" layoutX="132.0" layoutY="154.0" radius="100.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" />
-                                                <ImageView fx:id="imageView1" fitHeight="56.0" fitWidth="63.0" layoutX="149.0" layoutY="197.0" onMouseClicked="#fileOpen" pickOnBounds="true" preserveRatio="true" style="border-radius: 50%;">
+                                                <ImageView fx:id="imageView1" fitHeight="56.0" fitWidth="63.0" layoutX="149.0" layoutY="197.0" pickOnBounds="true" preserveRatio="true" style="border-radius: 50%;">
                                                    <image>
                                                       <Image url="@profile.png" />
                                                    </image>
