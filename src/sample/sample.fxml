@@ -78,10 +78,9 @@
                                                       <Image url="@update.png" />
                                                    </image>
                                                 </ImageView>
-                                                <TextField fx:id="search_name1" layoutX="219.0" layoutY="34.0" prefWidth="200.0" promptText="Name" />
+                                                <TextField fx:id="search_name_product" layoutX="219.0" layoutY="34.0" prefWidth="200.0" promptText="Name" />
                                                 <Label layoutX="221.0" layoutY="7.0" text="Name" />
-                                                <Button layoutX="447.0" layoutY="33.0" mnemonicParsing="false" onAction="#SearchData" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #f41d3a; -fx-text-fill: #fff;" text="Search" textFill="WHITE" />
-                                                <ImageView fx:id="imageViewAdmin111" fitHeight="51.0" fitWidth="30.0" layoutX="531.0" layoutY="34.0" onMouseClicked="#Retreiving" pickOnBounds="true" preserveRatio="true" style="border-radius: 50%;">
+                                                <ImageView fx:id="imageViewAdmin111" fitHeight="51.0" fitWidth="30.0" layoutX="620.0" layoutY="34.0" onMouseClicked="#Retreiving" pickOnBounds="true" preserveRatio="true" style="border-radius: 50%;">
                                                    <image>
                                                       <Image url="@update.png" />
                                                    </image>
@@ -90,6 +89,8 @@
                                                 <ChoiceBox fx:id="choiceBox_rating_product_update" layoutX="22.0" layoutY="426.0" />
                                                 <Label layoutX="22.0" layoutY="328.0" text="Category" />
                                                 <Label layoutX="26.0" layoutY="401.0" text="Rating" />
+                                                <ChoiceBox fx:id="search_type_product" layoutX="436.0" layoutY="34.0" prefWidth="150.0" />
+                                                <Label layoutX="435.0" layoutY="7.0" text="Type" />
                                              </children>
                                           </AnchorPane>
                                        </content>
@@ -186,28 +187,29 @@
                                                    </padding>
                                                 </TableView>
                                                 <Button fx:id="update_Admin" layoutX="120.0" layoutY="400.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #fcb737; -fx-text-fill: #fff;" text="Update" AnchorPane.rightAnchor="708.0" AnchorPane.topAnchor="400.0" />
-                                                <TextField fx:id="u_name" layoutX="31.0" layoutY="167.0" prefWidth="182.0" promptText="Name" AnchorPane.leftAnchor="31.0" AnchorPane.topAnchor="167.0" />
-                                                <TextField fx:id="u_email" layoutX="32.0" layoutY="248.0" prefWidth="183.0" promptText="Email" AnchorPane.topAnchor="248.0" />
-                                                <TextField fx:id="u_pass" layoutX="34.0" layoutY="328.0" prefWidth="182.0" promptText="Password" AnchorPane.topAnchor="328.0" />
-                                                <Label layoutX="31.0" layoutY="144.0" text="Name" AnchorPane.topAnchor="144.0" />
-                                                <Label layoutX="32.0" layoutY="225.0" text="Email" AnchorPane.topAnchor="225.0" />
-                                                <Label layoutX="34.0" layoutY="305.0" text="Password" AnchorPane.topAnchor="305.0" />
+                                                <TextField fx:id="u_name" layoutX="20.0" layoutY="167.0" prefWidth="182.0" promptText="Name" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="167.0" />
+                                                <TextField fx:id="u_email" layoutX="21.0" layoutY="248.0" prefWidth="183.0" promptText="Email" AnchorPane.topAnchor="248.0" />
+                                                <TextField fx:id="u_pass" layoutX="23.0" layoutY="328.0" prefWidth="182.0" promptText="Password" AnchorPane.topAnchor="328.0" />
+                                                <Label layoutX="20.0" layoutY="144.0" text="Name" AnchorPane.topAnchor="144.0" />
+                                                <Label layoutX="21.0" layoutY="225.0" text="Email" AnchorPane.topAnchor="225.0" />
+                                                <Label layoutX="23.0" layoutY="305.0" text="Password" AnchorPane.topAnchor="305.0" />
                                                 <Button fx:id="delete_Admin" layoutX="119.0" layoutY="442.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #f41d3a; -fx-text-fill: #fff;" text="Delete" textFill="WHITE" AnchorPane.rightAnchor="709.0" AnchorPane.topAnchor="442.0" />
-                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="127.0" layoutX="19.0" layoutY="5.0" stroke="BLACK" strokeType="INSIDE" width="159.0" />
-                                                <ImageView fx:id="ViewAdmin" fitHeight="118.0" fitWidth="149.0" layoutX="25.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" style="border-radius: 50%;" />
-                                                <ImageView fx:id="imageViewAdmin_update" fitHeight="37.0" fitWidth="49.0" layoutX="161.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true" style="border-radius: 50%;">
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="105.0" layoutX="19.0" layoutY="5.0" stroke="BLACK" strokeType="INSIDE" width="159.0" />
+                                                <ImageView fx:id="ViewAdmin" fitHeight="96.0" fitWidth="148.0" layoutX="25.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" style="border-radius: 50%;" />
+                                                <ImageView fx:id="imageViewAdmin_update" fitHeight="37.0" fitWidth="49.0" layoutX="160.0" layoutY="92.0" pickOnBounds="true" preserveRatio="true" style="border-radius: 50%;">
                                                    <image>
                                                       <Image url="@update.png" />
                                                    </image>
                                                 </ImageView>
                                                 <TextField fx:id="search_name" layoutX="233.0" layoutY="34.0" prefWidth="200.0" promptText="Name" />
                                                 <Label layoutX="235.0" layoutY="7.0" text="Name" />
-                                                <Button layoutX="447.0" layoutY="33.0" mnemonicParsing="false" onAction="#SearchData" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #f41d3a; -fx-text-fill: #fff;" text="Search" textFill="WHITE" />
-                                                <ImageView fx:id="imageViewAdmin1111" fitHeight="51.0" fitWidth="30.0" layoutX="528.0" layoutY="34.0" onMouseClicked="#Retreiving" pickOnBounds="true" preserveRatio="true" style="border-radius: 50%;">
+                                                <ImageView fx:id="imageViewAdmin1111" fitHeight="51.0" fitWidth="30.0" layoutX="710.0" layoutY="34.0" onMouseClicked="#Retreiving" pickOnBounds="true" preserveRatio="true" style="border-radius: 50%;">
                                                    <image>
                                                       <Image url="@update.png" />
                                                    </image>
                                                 </ImageView>
+                                                <ChoiceBox fx:id="search_type" layoutX="447.0" layoutY="33.0" prefWidth="150.0" />
+                                                <Label layoutX="448.0" layoutY="7.0" text="Type" />
                                              </children>
                                           </AnchorPane>
                                     </content>

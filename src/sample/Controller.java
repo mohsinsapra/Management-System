@@ -205,6 +205,12 @@ public class Controller implements Initializable {
     @FXML
     ImageView imageViewAdmin_update;
 
+    @FXML
+    ChoiceBox search_type;
+    @FXML
+    ChoiceBox search_type_product;
+    @FXML
+    TextField search_name_product;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -214,15 +220,14 @@ public class Controller implements Initializable {
         Create_Report();
 /////////////////////////////////////////
 
-        startup();
+        startup_Config();
         Retreiving();
-        admin_Setup();
-        product_Setup();
+        Setup();
 
 
     }
 
-    void admin_Setup() {
+    void Setup() {
 
         table.setOnMouseClicked(e -> admins.Selection_Admin());
         table.setOnKeyReleased(e -> admins.Selection_Admin());
@@ -233,10 +238,6 @@ public class Controller implements Initializable {
         imageViewadd.setOnMouseClicked(e -> admins.fileOpen());
         imageViewAdmin_update.setOnMouseClicked(e -> admins.fileOpenAdmin());
 
-    }
-
-    void product_Setup() {
-
         imageViewProduct_select.setOnMouseClicked(e -> product_class.fileOpenProduct_update());
         product_selector.setOnMouseClicked(e -> product_class.fileOpenProduct());
 
@@ -246,10 +247,17 @@ public class Controller implements Initializable {
         Delete_Product_btn.setOnAction(e -> product_class.Delete_Product());
         Add_Product_btn.setOnAction(e -> product_class.Add_Product());
 
+
+        search_name.setOnKeyReleased(e->admins.SearchAdmin());
+
+        search_name_product.setOnKeyReleased(e->product_class.SearchProduct());
+
+
     }
 
+
     ////////////////////////////////////////Start up/////////////////////////////////////
-    void startup() {//////////////////////////// Employee  ////////////////////////////////////////
+    void startup_Config() {//////////////////////////// Employee  ////////////////////////////////////////
         table_employee_id.setCellValueFactory(new PropertyValueFactory<>("id"));
         table_employee_name.setCellValueFactory(new PropertyValueFactory<>("name"));
 ///////////////////////////////////////////////// Product//////////////////////////////
@@ -274,6 +282,28 @@ public class Controller implements Initializable {
         choiceBox_rating_product.getItems().add("3");
         choiceBox_rating_product.getItems().add("4");
         choiceBox_rating_product.getItems().add("5");
+        ////////////////////////////////////////Search Type///////////////////////
+        search_type.getItems().add("<none>");
+        search_type.getItems().add("ID");
+        search_type.getItems().add("Name");
+        search_type.getItems().add("Email");
+        search_type.getSelectionModel().selectFirst();
+
+        search_type_product.getItems().add("<none>");
+        search_type_product.getItems().add("ID");
+        search_type_product.getItems().add("Name");
+        search_type_product.getItems().add("Description");
+        search_type_product.getItems().add("Category");
+        search_type_product.getItems().add("ProductRating");
+        search_type_product.getItems().add("Price");
+        search_type_product.getItems().add("QuantityOnHand");
+
+
+
+        search_type_product.getSelectionModel().selectFirst();
+
+
+        //search_type.set
 
 /////////////////////////////////////////////////////Update Product////////////////////////////////////////
         choiceBox_category_product_update.getItems().add("<none>");
@@ -325,6 +355,42 @@ public class Controller implements Initializable {
                 }
             }
         }
+
+        public void SearchAdmin() {
+            int rowcount=0;
+            connection();
+            try {
+                if (!search_name.getText().isEmpty() && !search_type.getSelectionModel().isSelected(0)) {
+                    resultSet = stm.executeQuery("select * from admins where " + search_type.getSelectionModel().getSelectedItem().toString() + " like '" + search_name.getText() + "%'");
+
+                    ObservableList<Admin> row = FXCollections.observableArrayList();
+
+                    while (resultSet.next()) {
+
+                        row.add(new Admin(resultSet.getString("id"),
+                                resultSet.getString("name"),
+                                resultSet.getString("email"),
+                                resultSet.getString("password"))
+                        );
+                        rowcount++;
+
+                        table.setItems(row);
+
+                    }
+                    if (rowcount<=0){
+                        row.add(new Admin("","","",""));
+                        table.setItems(row);
+                    }
+                } else {
+                    Retreiving();
+//                }
+                }
+
+            } catch (Exception e) {
+
+            }
+        }
+
 
         public void fileOpenAdmin() {
 
@@ -577,6 +643,44 @@ public class Controller implements Initializable {
             }
         }
 
+        public void SearchProduct() {
+            int rowcount=0;
+            connection();
+            try {
+                if (!search_name_product.getText().isEmpty() && !search_type_product.getSelectionModel().isSelected(0)) {
+                    resultSet = stm.executeQuery("select * from product where " + search_type_product.getSelectionModel().getSelectedItem().toString() + " like '" + search_name_product.getText() + "%'");
+
+                    ObservableList<Product> p_row = FXCollections.observableArrayList();
+                    while (resultSet.next()) {
+                        p_row.add(new Product(resultSet.getString("id"),
+                                        resultSet.getString("name"),
+                                        resultSet.getString("description"),
+                                        resultSet.getString("category"),
+                                        resultSet.getString("productrating"),
+                                        resultSet.getString("price"),
+                                        resultSet.getString("quantityonhand")
+                                )
+                        );
+                        table_product.setItems(p_row);
+
+
+                    }
+
+                    if (rowcount<=0){
+                        p_row.add(new Product("","","","","","",""));
+                        table_product.setItems(p_row);
+                    }
+                } else {
+                    Retreiving();
+//                }
+                }
+
+            } catch (Exception e) {
+
+            }
+        }
+
+
         public void Update_Product() {
             connection();
             try {
@@ -818,23 +922,6 @@ public class Controller implements Initializable {
     }
 
     ///////////////////////////////////////Search Data////////////////////////////
-    public void SearchData() {
-        try {
-            table.getItems().stream()
-                    .filter(item -> item.Name == search_name.getText())
-                    .findAny()
-                    .ifPresent(item -> {
-                        System.out.print("Data is here");
-                        table.getSelectionModel().select(item);
-                        table.scrollTo(item);
-
-                    });
-
-
-        } catch (Exception e) {
-
-        }
-    }
 
     /////////////////////////////////////////Fetch Data/////////////////////////////////////
     public void Retreiving() {
